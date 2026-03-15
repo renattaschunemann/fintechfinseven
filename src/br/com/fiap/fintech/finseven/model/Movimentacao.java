@@ -68,7 +68,7 @@ public class Movimentacao {
         System.out.println("Descrição: " + descricao);
         System.out.println("Tipo: " + tipo);
         System.out.println("Categoria: " + (categoria != null ? categoria : "Nenhuma"));
-        System.out.println("Valor: R$ " + valor);
+        System.out.printf("Valor: R$ %.2f%n", valor);
     }
 
 

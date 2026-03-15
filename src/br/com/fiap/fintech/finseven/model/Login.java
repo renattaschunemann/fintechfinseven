@@ -8,11 +8,10 @@ public class Login {
     private boolean contaBloqueada;
 
 
+    public Login() {
+    }
 
-    public Login(){};
-
-
-    public Login(int idLogin){
+    public Login(int idLogin) {
         System.out.println(idLogin);
     }
 
@@ -65,24 +64,30 @@ public class Login {
         this.contaBloqueada = contaBloqueada;
     }
 
+
+    //Método realizarLogin
     public void realizarLogin() {
-        System.out.println("Método realizarLogin executado - Validando acesso do usuário");
+        System.out.println("Validando acesso do usuário");
     }
 
+    //Método validarCredenciais executado
     public void validarCredenciais() {
-        System.out.println("Método validarCredenciais executado - Verificando email e senha");
+        System.out.println("Verificando email e senha");
     }
 
+    //Método recuperarSenha executado
     public void recuperarSenha() {
-        System.out.println("Método recuperarSenha executado - Processo de recuperação iniciado");
+        System.out.println("Processo de recuperação iniciado");
     }
 
+    //Método bloquearConta executado
     public void bloquearConta() {
-        System.out.println("Método bloquearConta executado - Conta bloqueada por tentativas inválidas");
+        System.out.println("Conta bloqueada por tentativas inválidas");
     }
 
+    //Método contatarSuporte executado
     public void contatarSuporte() {
-        System.out.println("Método contatarSuporte executado - Direcionando usuário ao suporte");
+        System.out.println("Direcionando usuário ao suporte");
     }
 
 }

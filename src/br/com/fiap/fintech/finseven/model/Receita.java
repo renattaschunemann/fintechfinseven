@@ -9,8 +9,11 @@ public class Receita extends Movimentacao {
         super(descricao, valor, data, TipoMovimentacao.RECEITA, categoria);
         this.fonte = fonte;
     }
-
+    public Receita(){
+        super();
+    }
     public String getFonte() { return fonte; }
+
     public void setFonte(String fonte) { this.fonte = fonte; }
 
     @Override
