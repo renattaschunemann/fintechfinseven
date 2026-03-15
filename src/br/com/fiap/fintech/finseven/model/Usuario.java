@@ -61,7 +61,7 @@ public class Usuario {
 
     }
 
-    public void atualizarUsuario(String nome, int dtNasc) {
+    public void atualizarUsuario(String nome, int cpf) {
         this.nome = nome;
         this.cpf = cpf;
 
