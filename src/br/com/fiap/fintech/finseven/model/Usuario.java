@@ -61,7 +61,7 @@ public class Usuario {
 
     }
 
-    public void atualizarUsuario(String nome, int dtNasc) {
+    public void atualizarUsuario(String nome, int cpf) {
         this.nome = nome;
         this.cpf = cpf;
 
@@ -73,7 +73,7 @@ public class Usuario {
         System.out.println("-----Dados do usuário-----");
         System.out.println("Nome: " + nome
                 + "\n CPF: " + cpf
-                + "\n Endereço: " + endereco
+               // + "\n Endereço: " + endereco (exibição do endereço no método exibirEndereço)
                 + "\n Id do usuário: " + login.getIdLogin()
                 + "\nEmail do usuário:" + login.getEmail());
 
