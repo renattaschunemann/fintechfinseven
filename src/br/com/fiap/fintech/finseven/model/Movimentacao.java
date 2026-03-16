@@ -63,7 +63,7 @@ public class Movimentacao {
     }
 
     public void exibirMovimentacao() {
-        System.out.println("--- Extrato ---");
+        System.out.println("\n--- Extrato ---");
         System.out.println("Data: " + data);
         System.out.println("Descrição: " + descricao);
         System.out.println("Tipo: " + tipo);

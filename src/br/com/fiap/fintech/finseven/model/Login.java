@@ -6,9 +6,15 @@ public class Login {
     private String senha;
     private int tentativasLogin;
     private boolean contaBloqueada;
+    private  Usuario usuario;
 
 
     public Login() {
+    }
+
+    public Login(String email, String senha) {
+        this.email = email;
+        this.senha = senha;
     }
 
     public Login(int idLogin) {
@@ -23,6 +29,13 @@ public class Login {
         this.contaBloqueada = contaBloqueada;
     }
 
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 
     public int getIdLogin() {
         return idLogin;
@@ -71,24 +84,23 @@ public class Login {
     }
 
     //Método realizarLogin
-    public boolean realizarLogin(String email, String senha) {
-        System.out.println("Validando acesso do usuário");
-        if (contaBloqueada) {
-            System.out.println("Conta bloqueada.");
-            return false;
-        } else if (validarCredenciais(email, senha)) {
-            System.out.println("Login realizado com sucesso!");
-            tentativasLogin = 0;
-            return true;
-        } else {
-            tentativasLogin++;
-            System.out.println("Usuário ou senha incorretos.");
+    public void realizarLogin(String emailInformado, String senhaInformada) {
+        if (this.contaBloqueada) {
+            System.out.println("ACESSO NEGADO: Conta bloqueada. Procure o suporte.");
+            return;
+        }
 
-            if (tentativasLogin >= 3) {
+        // Validação: Verifica se a senha informada é IGUAL à senha do objeto
+        if (this.senha != null && this.senha.equals(senhaInformada)) {
+            System.out.println("Login realizado com sucesso! Bem-vindo, " + (usuario != null ? usuario.getNome() : emailInformado));
+            this.tentativasLogin = 0;
+        } else {
+            this.tentativasLogin++;
+            System.out.println("Erro: Senha incorreta! Tentativa " + tentativasLogin + " de 3.");
+
+            if (this.tentativasLogin >= 3) {
                 bloquearConta();
             }
-
-            return false;
         }
     }
 

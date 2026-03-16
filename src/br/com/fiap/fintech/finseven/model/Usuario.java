@@ -10,7 +10,6 @@ public class Usuario {
     public Usuario() {
     }
 
-    ;
 
     public Usuario(String nome, int cpf, Endereco endereco, Login login) {
         this.nome = nome;
@@ -35,11 +34,11 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public int getDtNasc() {
+    public int getCpf() {
         return cpf;
     }
 
-    public void setDtNasc(int dtNasc) {
+    public void setCpf(int cpf) {
         this.cpf = cpf;
     }
 
@@ -70,10 +69,10 @@ public class Usuario {
     }
 
     public void exibirDadosUsuario() {
-        System.out.println("-----Dados do usuário-----");
+        System.out.println("\n-----Dados do usuário-----");
         System.out.println("Nome: " + nome
                 + "\n CPF: " + cpf
-               // + "\n Endereço: " + endereco (exibição do endereço no método exibirEndereço)
+                // + "\n Endereço: " + endereco (exibição do endereço no método exibirEndereço)
                 + "\n Id do usuário: " + login.getIdLogin()
                 + "\nEmail do usuário:" + login.getEmail());
 
