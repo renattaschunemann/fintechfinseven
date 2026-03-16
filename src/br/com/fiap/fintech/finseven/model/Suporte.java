@@ -1,7 +1,6 @@
 package br.com.fiap.fintech.finseven.model;
 
-
-public class Suporte {
+public class Suporte extends Login {
 
     private String assunto;
     private String mensagem;
@@ -44,10 +43,15 @@ public class Suporte {
 
     // Envia a mensagem de suporte
     public void enviarMensagem() {
-        if (usuario != null && assunto != null && mensagem != null) {
+
+        if (usuario != null &&
+                assunto != null && !assunto.isEmpty() &&
+                mensagem != null && !mensagem.isEmpty()) {
+
             System.out.println("Chamado enviado por: " + usuario.getNome());
             System.out.println("Assunto: " + assunto);
             System.out.println("Mensagem: " + mensagem);
+
         } else {
             System.out.println("Erro: informações de suporte incompletas.");
         }
