@@ -6,21 +6,23 @@ public class Login {
     private String senha;
     private int tentativasLogin;
     private boolean contaBloqueada;
+    private Usuario usuario;
 
 
     public Login() {
     }
 
     public Login(int idLogin) {
-        System.out.println(idLogin);
+        this.idLogin = idLogin;
     }
 
-    public Login(int idLogin, String email, String senha, int tentativasLogin, boolean contaBloqueada) {
+    public Login(int idLogin, String email, String senha, int tentativasLogin, boolean contaBloqueada, Usuario usuario) {
         this.idLogin = idLogin;
         this.email = email;
         this.senha = senha;
         this.tentativasLogin = tentativasLogin;
         this.contaBloqueada = contaBloqueada;
+        this.usuario = usuario;
     }
 
 
@@ -62,6 +64,14 @@ public class Login {
 
     public void setContaBloqueada(boolean contaBloqueada) {
         this.contaBloqueada = contaBloqueada;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
 
