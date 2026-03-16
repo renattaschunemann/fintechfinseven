@@ -64,25 +64,43 @@ public class Login {
         this.contaBloqueada = contaBloqueada;
     }
 
-
-    //Método realizarLogin
-    public void realizarLogin() {
-        System.out.println("Validando acesso do usuário");
+    //Método validarCredenciais executado
+    public boolean validarCredenciais(String email, String senha) {
+        System.out.println("Verificando email e senha");
+        return email.equals(email) && senha.equals(senha);
     }
 
-    //Método validarCredenciais executado
-    public void validarCredenciais() {
-        System.out.println("Verificando email e senha");
+    //Método realizarLogin
+    public boolean realizarLogin(String email, String senha) {
+        System.out.println("Validando acesso do usuário");
+        if (contaBloqueada) {
+            System.out.println("Conta bloqueada.");
+            return false;
+        } else if (validarCredenciais(email, senha)) {
+            System.out.println("Login realizado com sucesso!");
+            tentativasLogin = 0;
+            return true;
+        } else {
+            tentativasLogin++;
+            System.out.println("Usuário ou senha incorretos.");
+
+            if (tentativasLogin >= 3) {
+                bloquearConta();
+            }
+
+            return false;
+        }
+    }
+
+    //Método bloquearConta executado
+    public void bloquearConta() {
+        contaBloqueada = true;
+        System.out.println("Conta bloqueada por excesso tentativas inválidas");
     }
 
     //Método recuperarSenha executado
     public void recuperarSenha() {
         System.out.println("Processo de recuperação iniciado");
-    }
-
-    //Método bloquearConta executado
-    public void bloquearConta() {
-        System.out.println("Conta bloqueada por tentativas inválidas");
     }
 
     //Método contatarSuporte executado
